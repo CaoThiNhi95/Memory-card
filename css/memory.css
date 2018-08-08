@@ -40,13 +40,13 @@ h1 {
 	left: 0;
 }
 
-.card:hover .back{
+/*.card:hover .back{
 	transform: rotateY(0deg);
 }
 
 .card:hover .front{
 	transform: rotateY(180deg);
-}
+}*/
 
 .card .front, .card .back{
 	transition: all 0.5s;

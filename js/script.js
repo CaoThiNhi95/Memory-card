@@ -28,19 +28,24 @@ function shuffle(array){
 // console.log(arr);
 
 function flig(card){
-	$(card).toggleClass('flipped');
+	// $(card).flip({
+ //  		trigger: 'click'
+	// 	});
+	$(card).flip();
 
-	if(!current){
+	if(current==null){
 		current = $(card);
 	}else{
 		if(current.attr('data-name') != $(card).attr('data-name')){
 			//Khac nhau
 			setTimeout(function(){
 				console.log('Khác nhau');
-				current.toggleClass('flipped');
-				$(card).toggleClass('flipped');
+				// current.toggleClass('flipped');
+				// $(card).toggleClass('flipped');
+				$(card).flip(false);
+				$(current).flip(false);
 				current = null;
-			}, 500);
+			}, 1000);
 		}else{
 			//Giong nhau
 			setTimeout(function(){
@@ -48,7 +53,7 @@ function flig(card){
 				$(card).css('opacity', '0');
 				current.css('opacity', '0');
 				current = null;
-			},200);
+			},500);
 		}
 	}
 }
